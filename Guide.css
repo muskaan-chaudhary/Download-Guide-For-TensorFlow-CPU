@@ -1,0 +1,107 @@
+Ever wondered why it is called <strong>TensorFlow</strong>? As the name suggests, TensorFlow defines how <strong>tensors</strong> will <strong>flow</strong> through the system.
+But what are these <strong>tensors</strong> that we are discussing?
+When we represent data for machine learning, it generally needs to be done numerically. <strong>Tensor</strong> is a data repository, especially when referring to neural network data representation.
+Then what are TensorFlow <strong>Variables</strong>? They are the ones representing the change in the value of these tensors by doing operations on it.
+
+
+---------------------We'll be installing TensorFlow for Windows 10 CPU. If you want to install TensorFlow for Windows 10 GPU, Mac OSX CPU, Ubuntu etc. then you can do it manually from <a href="https://www.tensorflow.org/install" target="_blank" rel="noopener noreferrer"><span style="color: #cc99ff;">here</span>.</a>
+
+TensorFlow for Windows 10 CPU works for me.
+To skip the installation part, click <span style="color: #cc99ff;"><a style="color: #cc99ff;" href="#here"> here </a></span>
+If you are facing problems in installing TensorFlow, please follow the below instructions.
+<h3>Installing TensorFlow</h3>
+<ul>
+ 	<li>Firstly, Download <a href="https://docs.conda.io/en/latest/miniconda.html" target="_blank" rel="noopener noreferrer"><span style="color: #cc99ff;">Conda</span>.</a> We'll be Installing MiniConda which is a minimal version of Anaconda.
+Make sure you choose the latest version available to download.</li>
+</ul>
+<img class="aligncenter wp-image-50 size-full" src="https://valueml.com/wp-content/uploads/2020/06/Screenshot-23_LI.jpg" alt="" width="972" height="230" />
+<ul>
+ 	<li>Now, let's install MiniConda.</li>
+</ul>
+<img class="aligncenter wp-image-65 size-full" src="https://valueml.com/wp-content/uploads/2020/06/Screenshot-24.png" alt="" width="913" height="508" />
+<ul>
+ 	<li>Select both of the given options and click on 'install'.</li>
+</ul>
+<img class="aligncenter wp-image-66 size-full" src="https://valueml.com/wp-content/uploads/2020/06/Screenshot-26.png" alt="" width="822" height="525" />
+<ul>
+ 	<li>Once Miniconda is installed, Let's prepare our .yml script for Conda.</li>
+ 	<li>After clicking <span style="color: #cc99ff;"><a style="color: #cc99ff;" href="https://raw.githubusercontent.com/jeffheaton/t81_558_deep_learning/master/tensorflow.yml" target="_blank" rel="noopener noreferrer">here,</a><span style="color: #000000;"> save the file as text document. (to the directory of your machine where you can find and access it easily. Suggested to save it in user directory.)</span></span></li>
+ 	<li><span style="color: #cc99ff;"><span style="color: #000000;">Now, open the Command Prompt of your windows  and change to the directory which has the .yml script that you saved earlier.</span></span></li>
+ 	<li>Now, we are going to rename our yml.txt file to .yml file.</li>
+</ul>
+<pre class="EnlighterJSRAW" data-enlighter-language="powershell" data-enlighter-theme="beyond" data-enlighter-linenumbers="false">ren tensorflow.yml.text tensorflow.yml</pre>
+&nbsp;
+
+<img class="aligncenter wp-image-72 size-full" src="https://valueml.com/wp-content/uploads/2020/06/Screenshot-28.png" alt="" width="755" height="431" />
+<ul>
+ 	<li>Now, let's install Jupyter through Conda.</li>
+</ul>
+&nbsp;
+<pre class="EnlighterJSRAW" data-enlighter-language="powershell" data-enlighter-theme="beyond" data-enlighter-linenumbers="false">conda install jupyter</pre>
+<ul>
+ 	<li>It will take some time to install [if prompt type 'y']</li>
+</ul>
+<img class="aligncenter wp-image-74 size-full" src="https://valueml.com/wp-content/uploads/2020/06/Screenshot-32.png" alt="" width="786" height="444" />
+<ul>
+ 	<li>After Jupyter is installed, we are going to run the installation scrip that we downloaded earlier, to create an environment.</li>
+</ul>
+&nbsp;
+<pre class="EnlighterJSRAW" data-enlighter-language="powershell" data-enlighter-theme="beyond" data-enlighter-linenumbers="false">dir *.yml</pre>
+&nbsp;
+<pre class="EnlighterJSRAW" data-enlighter-language="powershell" data-enlighter-theme="beyond" data-enlighter-linenumbers="false">conda env create -v -f tensorflow.yml</pre>
+<ul>
+ 	<li>This will take some time.</li>
+</ul>
+<img class="aligncenter wp-image-75 size-full" src="https://valueml.com/wp-content/uploads/2020/06/Screenshot-34.png" alt="" width="879" height="420" />
+<ul>
+ 	<li>Now, our environment is ready and we can start using TensorFlow.</li>
+ 	<li>To activate TensorFlow, run the following command.</li>
+</ul>
+&nbsp;
+<pre class="EnlighterJSRAW" data-enlighter-language="powershell" data-enlighter-theme="beyond" data-enlighter-linenumbers="false">conda activate tensorflow</pre>
+Similarly, to deactivate TensorFlow, run 'conda deactivate'.
+<ul>
+ 	<li>It moves you to the TensorFlow environment.</li>
+</ul>
+<pre>Output:
+(tensorflow) C:\Users\Jeff&gt; 
+
+</pre>
+<ul>
+ 	<li>Now, Let's go into Python environment of TensorFlow</li>
+</ul>
+&nbsp;
+<pre class="EnlighterJSRAW" data-enlighter-language="powershell" data-enlighter-theme="beyond" data-enlighter-linenumbers="false">python</pre>
+&nbsp;
+<ul>
+ 	<li>Let's check if our TensorFlow is still working.</li>
+</ul>
+&nbsp;
+<pre class="EnlighterJSRAW" data-enlighter-language="python" data-enlighter-theme="beyond" data-enlighter-linenumbers="false">import tensorflow as tf</pre>
+This will take a moment.
+
+&nbsp;
+<pre class="EnlighterJSRAW" data-enlighter-language="python" data-enlighter-theme="beyond" data-enlighter-linenumbers="false">print(tf.__version__)</pre>
+<ul>
+ 	<li>If you're getting an output like this:</li>
+</ul>
+<pre>2.0.0</pre>
+Your TensorFlow is working.
+<ul>
+ 	<li>Now, lets install the Kernel for Jupyter. (This is an important step. Make sure you don't skip it)</li>
+</ul>
+<pre class="EnlighterJSRAW" data-enlighter-language="powershell" data-enlighter-theme="beyond" data-enlighter-linenumbers="false">python -m ipykernel install --user --name tensorflow --display-name "Python 3.7 (tensorflow)"</pre>
+[if you are getting error in this step, then let us know in the comment section.]
+<ul>
+ 	<li>This registers our environment into Jupyter Kernel, so that we can use TensorFlow in Jupyter. If you skip this step, your Jupyter will not know that you created a kernel like this.</li>
+ 	<li>Now lets open Jupyter Notebook to check if our Kernel is installed.</li>
+</ul>
+&nbsp;
+<pre class="EnlighterJSRAW" data-enlighter-language="powershell" data-enlighter-theme="beyond" data-enlighter-linenumbers="false">jupyter notebook</pre>
+This will open the Jupyter Notebook. Now, click on 'New' on the top-right corner.
+
+<img class="aligncenter wp-image-77 size-full" src="https://valueml.com/wp-content/uploads/2020/06/Screenshot-35.png" alt="" width="1366" height="768" />
+<ul>
+ 	<li>As you can see, Jupyter now has the Kernel we just created.</li>
+ 	<li>Click on 'Python 3.7 (tensorflow)' and it's ready to get started.</li>
+</ul>
